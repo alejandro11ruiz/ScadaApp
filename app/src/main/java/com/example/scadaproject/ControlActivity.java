@@ -37,18 +37,6 @@ public class ControlActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 isOn=snapshot.getValue(boolean.class);
                 rbOn.setChecked(isOn);
-                handler = new Handler();
-                if(isOn){
-                    btnStart.setEnabled(false);
-                    btnStart.setClickable(false);
-                    btnStop.setEnabled(true);
-                    btnStop.setClickable(true);
-                }else {
-                    btnStart.setEnabled(true);
-                    btnStart.setClickable(true);
-                    btnStop.setEnabled(false);
-                    btnStop.setClickable(false);
-                }
             }
 
             @Override
@@ -57,45 +45,51 @@ public class ControlActivity extends AppCompatActivity {
             }
         });
 
+        handler = new Handler();
+
         btnStart.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                btnStart.setEnabled(false);
-                btnStart.setClickable(false);
-                btnStop.setEnabled(false);
-                btnStop.setClickable(false);
-                FirebaseDatabase.getInstance().getReference(MainActivity.PATH_CONTROL).child(MainActivity.PATH_START).setValue(true);
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        btnStart.setEnabled(true);
-                        btnStart.setClickable(true);
-                        btnStop.setEnabled(true);
-                        btnStop.setClickable(true);
-                        FirebaseDatabase.getInstance().getReference(MainActivity.PATH_CONTROL).child(MainActivity.PATH_START).setValue(false);
-                    }
-                }, 2000);
+                if(!isOn) {
+                    btnStart.setEnabled(false);
+                    btnStart.setClickable(false);
+                    btnStop.setEnabled(false);
+                    btnStop.setClickable(false);
+                    FirebaseDatabase.getInstance().getReference(MainActivity.PATH_CONTROL).child(MainActivity.PATH_START).setValue(true);
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            btnStart.setEnabled(true);
+                            btnStart.setClickable(true);
+                            btnStop.setEnabled(true);
+                            btnStop.setClickable(true);
+                            FirebaseDatabase.getInstance().getReference(MainActivity.PATH_CONTROL).child(MainActivity.PATH_START).setValue(false);
+                        }
+                    }, 2000);
+                }
             }
         });
 
         btnStop.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                btnStop.setEnabled(false);
-                btnStop.setClickable(false);
-                btnStart.setEnabled(false);
-                btnStart.setClickable(false);
-                FirebaseDatabase.getInstance().getReference(MainActivity.PATH_CONTROL).child(MainActivity.PATH_STOP).setValue(true);
-                handler.postDelayed(new Runnable() {
-                    @Override
-                    public void run() {
-                        btnStop.setEnabled(true);
-                        btnStop.setClickable(true);
-                        btnStart.setEnabled(true);
-                        btnStart.setClickable(true);
-                        FirebaseDatabase.getInstance().getReference(MainActivity.PATH_CONTROL).child(MainActivity.PATH_STOP).setValue(false);
-                    }
-                }, 2000);
+                if (isOn) {
+                    btnStop.setEnabled(false);
+                    btnStop.setClickable(false);
+                    btnStart.setEnabled(false);
+                    btnStart.setClickable(false);
+                    FirebaseDatabase.getInstance().getReference(MainActivity.PATH_CONTROL).child(MainActivity.PATH_STOP).setValue(true);
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            btnStop.setEnabled(true);
+                            btnStop.setClickable(true);
+                            btnStart.setEnabled(true);
+                            btnStart.setClickable(true);
+                            FirebaseDatabase.getInstance().getReference(MainActivity.PATH_CONTROL).child(MainActivity.PATH_STOP).setValue(false);
+                        }
+                    }, 2000);
+                }
             }
         });
 
