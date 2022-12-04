@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "84303508465",
+    "firebase_url": "https://scadaproject-f92db-default-rtdb.firebaseio.com",
+    "project_id": "scadaproject-f92db",
+    "storage_bucket": "scadaproject-f92db.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:84303508465:android:1d0090783af1b7f928ca50",
+        "android_client_info": {
+          "package_name": "com.example.scadaproject"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "84303508465-fnvj5v7ne746vbprs7rnbb9t3ti94h29.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCpRdCQ15lKtQmkUZrNaQ7YuAWlKZHpRWI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "84303508465-fnvj5v7ne746vbprs7rnbb9t3ti94h29.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
