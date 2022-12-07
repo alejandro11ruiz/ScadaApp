@@ -19,7 +19,8 @@
             android:id="@+id/rbClamped"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="40sp"/>
+            android:textSize="40sp"
+            android:clickable="false"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -37,7 +38,8 @@
             android:id="@+id/rbLimite_Piso"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="40sp"/>
+            android:textSize="40sp"
+            android:clickable="false"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -56,7 +58,8 @@
             android:id="@+id/rbPallet_Entry"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="40sp"/>
+            android:textSize="40sp"
+            android:clickable="false"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -75,7 +78,8 @@
             android:id="@+id/rbPallet_Loaded"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="40sp"/>
+            android:textSize="40sp"
+            android:clickable="false"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -94,7 +98,8 @@
             android:id="@+id/rbPusher_Limit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="40sp"/>
+            android:textSize="40sp"
+            android:clickable="false"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -113,7 +118,8 @@
             android:id="@+id/rbSensor_Cajas"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="40sp"/>
+            android:textSize="40sp"
+            android:clickable="false"/>
 
         <TextView
             android:layout_width="wrap_content"

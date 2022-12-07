@@ -32,17 +32,6 @@ public class SupervisionActuadoresActivity extends AppCompatActivity {
         rbPush=findViewById(R.id.rbPush);
         rbRotador=findViewById(R.id.rbRotador);
 
-        rbAbrir_piso.setClickable(false);
-        rbBanda1.setClickable(false);
-        rbBanda2.setClickable(false);
-        rbClamp.setClickable(false);
-        rbElevador_Moviendo.setClickable(false);
-        rbExit_Conveyor.setClickable(false);
-        rbLoad_Pallet.setClickable(false);
-        rbPallet_Feeder.setClickable(false);
-        rbPush.setClickable(false);
-        rbRotador.setClickable(false);
-
         FirebaseDatabase.getInstance().getReference(MainActivity.PATH_SUPERVISION).child(MainActivity.PATH_ACTUADORES).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {

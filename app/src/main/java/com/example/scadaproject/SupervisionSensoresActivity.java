@@ -28,13 +28,6 @@ public class SupervisionSensoresActivity extends AppCompatActivity {
         rbPusher_Limit=findViewById(R.id.rbPusher_Limit);
         rbSensor_Cajas=findViewById(R.id.rbSensor_Cajas);
 
-        rbClamped.setClickable(false);
-        rbLimite_Piso.setClickable(false);
-        rbPallet_Entry.setClickable(false);
-        rbPallet_Loaded.setClickable(false);
-        rbPusher_Limit.setClickable(false);
-        rbSensor_Cajas.setClickable(false);
-
         FirebaseDatabase.getInstance().getReference(MainActivity.PATH_SUPERVISION).child(MainActivity.PATH_SENSORES).addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
